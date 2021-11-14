@@ -45,7 +45,7 @@
         <div class="popup__body">
             <form method="get" onsubmit="return false;" class="popup__create-new-task-form" id="create-new-task-form">
                 <label>Enter task title here: </label>
-                <input type="text" id="task-title-form" class="input-form">
+                <input type="text" onfocus="this.value = ''" id="task-title-form" class="input-form">
                 <div class="popup__form-radio-buttons">
                     <label>Very Important<input class="radio-btn" value="veryImportant" type="radio" name="importance"
                             id="very-important"></label>
