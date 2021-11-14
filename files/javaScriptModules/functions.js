@@ -17,9 +17,21 @@ export const displayError = (errorText, container = document.body, time = 5000, 
     container.appendChild(errorMessage)
     setTimeout(() => errorMessage.remove(), time)
 }
+export const displayWarning = (warningText, container = document.body, time = 5000, ...classList) => {
+    if (!warningText) return
+    const warningMessage = document.createElement("div")
+    warningMessage.classList.add("error-container")
+    if (classList) classList.forEach(className => warningMessage.classList.add(className))
+    warningMessage.innerHTML =
+        `<div class="warning-message">
+            ${warningText}
+        </div>
+        `
+    container.appendChild(warningMessage)
+    setTimeout(() => warningMessage.remove(), time)
+}
 
 export const createNewTask = (taskTitle, taskImportanceStatus = "notImportant") => {
-    if (!taskTitle || taskTitle < 0 || taskTitle > 18) displayError("Label lenght must be in range of 0, 18 symbols", document.querySelector("#create-new-task-form"), "error")
     const task = document.createElement("div")
     task.classList.add("task")
     task.innerHTML += `
@@ -51,7 +63,7 @@ export const togglePopup = (popupWindow) => {
 
 export const handleNewTaskFormSubmit = (taskTitle, taskImportanceStatus, container) => {
     if (!taskTitle || !container) {
-        displayError("Please, enter the task title!", container, 100000000)
+        displayError("Please, enter the task title!", container, 5000)
         return
     }
     const newTask = createNewTask(taskTitle, taskImportanceStatus)
