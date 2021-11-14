@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+:root {
+    --main-bg-color: #1a2024;
+    --main-bg-color-lighter:#242c31;
+    --lighter-gray-color1:rgb(181, 189, 212);
+    --task-color: #374046;
+    --button-bg-color: #3d484f;
+    --dimmed-dark-red-color: #a7161679;
+    --dimmed-lighter-red-color: #e62121;
+    --text-color: rgb(235, 235, 235);
+}
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6, p {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+ul li, ol li {
+    list-style: none;
+    text-decoration: none;
+}
+footer, header, section, aside {
+    position: fixed;
+}
+a {
+    text-decoration: none;
+}
+button, button:hover {
+    color: var(--text-color);
+    background-color: var(--button-bg-color);
+    border: none;
+    background-color: none;
+}
+input, input:focus {
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+}
+
+/* The end of nulling part */
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-bg-color);
+}
+.content-wrapper {
+    width: 100%;
+    height: 90%;
+}
+.operation-button {
+    background-color: var(--button-bg-color);
+    border-radius: 0.2rem;
+    width: 8rem;
+    height: 4rem;
+    font-size: 1.5rem;
+}
+.operation-button:hover{
+    border-radius: 0.5rem;
+    cursor: pointer;
+    background-color: var(--task-color);
+    border: 1px solid rgba(240, 240, 240, 0.377);
+}
+.row {
+    width: 100%;
+    height: 100%;
+}
+.todolist-wrapper {
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 95%;
+    height: 90%;
+    background-color: var(--main-bg-color-lighter);
+}
+
+.todolist__header {
+    width: 100%;
+    height: 10%;
+    height: 5rem;
+}
+.todolist__body {
+    width: 100%;
+    height: 90%;
+}
+.header__operations-buttons {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    float: left;
+}
+.header__operations-buttons button {
+    text-align: center;
+    margin: 0.5rem 0.5rem;
+}
+.header__labels {
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+.header-button {
+    width: 30rem;
+}
+.header__labels h1 {
+    font-size: 2rem;
+}
+.header__labels p {
+    font-size: 1.5rem;
+}
+
+.todolist__tasks-section {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    margin: auto;
+}
+.todolist__tasks-section::-webkit-scrollbar {
+    background-color: var(--button-bg-color);
+}
+.todolist__tasks-section::-webkit-scrollbar-thumb {
+    background-color: var(--lighter-gray-color1);
+    border-radius: 0.5rem;
+}
+
+.hiden {
+    display: none;
+}
+.popup-window {
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: var(--text-color)
+}
+.popup__right-column {
+    float: right;
+    width: 30%;
+    height: 100%;
+}
+.popup__header-close-popup-button {
+    border-radius: 0rem 0rem 0rem 0.5rem;
+    position: relative;
+    top: 0;
+    right: 0;
+    text-align: center;
+    width: 6rem;
+    height: 3rem;
+    background-color: var(--dimmed-dark-red-color);
+    color: var(--text-color);
+    font-size: 2.5rem;
+    float: right;
+    margin: 0;
+}
+.popup__header-close-popup-button:hover {
+    cursor: pointer;
+    background-color: var(--dimmed-lighter-red-color);
+    border: 1px solid var(--text-color)
+}
+.popup__header-info {
+    margin: auto;
+    width: 30%;
+    text-align: center;
+}
+.popup__header-info h1 {
+    font-size: 5rem;    
+}
+.popup__body {
+    display: flex;
+    text-align: center;
+    width: 100%;
+    height: 90%;
+    align-items: center;
+    justify-content: center;
+}
+.popup__create-new-task-form {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.popup__create-new-task-form label {
+    font-size: 2.5rem;
+    margin: 1rem;
+}
+
+.input-form {
+    text-align: center;
+    border-radius: 0.5rem;
+    width: 31.5rem;
+    height: 3rem;
+}
+.popup__form-buttons {
+    width: 50%;
+    height: 50%;
+    margin: 4.5rem 0rem 0rem;
+    flex-flow: column;
+    align-items: center;
+}
+.popup__form-buttons button {
+    font-size: 4rem;
+    width: 15rem;
+    height: 7.5rem;
+    margin: 1rem
+}
+.task {
+    border-radius: 0.5rem;
+    margin: auto auto 0.5rem auto;
+    padding: 0.5rem;
+    background-color: var(--task-color);
+    width: 95%;
+    height: 12%;
+}
+.task__info {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+/* .task__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 50%;
+    height: 100%;
+    float: right;
+}
+.task__buttons button {
+    font-size: 2rem;
+    background-color: var(--button-bg-color);
+    width: 10rem;
+    height: 5rem;
+    margin: 1rem;
+    float: right;
+} */
+.task__label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    display: flex;
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+.task__label h1 {
+    margin: 3rem;
+    text-align: center;
+    font-size: 3rem;    
+}
+.task__info-importance {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50%;
+    height: 100%;
+    float: right;
+}
+.task__info-importance p {
+    font-size: 3rem;
+}
+.importance-image {
+    vertical-align: middle;
+    border-radius: 100%;
+    width: 3rem;
+    height: 3rem;
+}
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.error-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1000000000;
+    width: 500px;
+    height: 250px;
+    color: var(--text-color);
+    background-color: var(--dimmed-dark-red-color);
+    font-size: 3rem;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+.radio-btn {
+    vertical-align: middle;
+    width: 3rem;
+    height: 3rem;
+}
+.popup__form-radio-buttons {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+

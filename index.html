@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./files/pictures/favicon.ico">
+    <link rel="stylesheet" href="./style.css">
+    <title>ToDoList</title>
+</head>
+
+<body>
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="todolist-wrapper">
+                <div class="todolist__header">
+                    <div class="header__labels">
+                        <h1>ToDoList</h1>
+                        <p>You can add new tasks and see current below</p>
+                    </div>
+                    <div class="header__operations-buttons">
+                        <button class="operation-button header-button" id="add-new-task-button">Add new task</button>
+                        <button class="operation-button header-button" id="delete-all-tasks-button">Delete all
+                            tasks</button>
+                    </div>
+                </div>
+                <div class="todolist__body">
+                    <div id="tasks-container" class="todolist__tasks-section">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-window hiden">
+        <div class="popup__header">
+            <div class="popup__right-column">
+                <div class="popup__header-close-popup-button" id="close-popup-button">X</div>
+            </div>
+            <div class="popup__header-info">
+                <h1>Create new task</h1>
+            </div>
+        </div>
+        <div class="popup__body">
+            <form method="get" onsubmit="return false;" class="popup__create-new-task-form" id="create-new-task-form">
+                <label>Enter task title here: </label>
+                <input type="text" id="task-title-form" class="input-form">
+                <div class="popup__form-radio-buttons">
+                    <label>Very Important<input class="radio-btn" value="veryImportant" type="radio" name="importance"
+                            id="very-important"></label>
+                    <label>Important<input class="radio-btn" type="radio" value="important" name="importance"
+                            id="important"></label>
+                    <label>Not important<input class="radio-btn" value="notImportant" checked type="radio"
+                            name="importance" id="not-important"></label>
+                </div>
+                <div class="popup__form-buttons">
+                    <button type="reset" class="operation-button">Reset</button>
+                    <button class="operation-button" type="submit">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js" type="module"></script>
+</body>
+
+</html>
