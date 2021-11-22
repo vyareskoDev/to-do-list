@@ -271,14 +271,23 @@ body {
 .task__info-importance {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     width: 50%;
     height: 100%;
     float: right;
 }
+
+.task__info-buttons {
+    float: right;
+    margin: 3rem;
+}
+
 .task__info-importance p {
     font-size: 3rem;
+    margin: 1rem;
 }
+
+
 .importance-image {
     vertical-align: middle;
     border-radius: 100%;

@@ -36,14 +36,17 @@ export const createNewTask = (taskTitle, taskImportanceStatus = "notImportant") 
     task.classList.add("task")
     task.innerHTML += `
     <div class="task__info">
-    <div class="task__label">
-        <h1>${taskTitle}</h1>
-    </div>
-    <div class="task__info-importance">
-        <p>
-            Importance: <img class="importance-image" alt="${taskImportanceStatus}" src="${importanceStatusMap[taskImportanceStatus]}" />
-        </p>
-    </div>
+        <div class="task__label">
+            <h1>${taskTitle}</h1>
+        </div>
+        <div class="task__info-importance">
+            <p>
+                Importance: <img class="importance-image" alt="${taskImportanceStatus}" src="${importanceStatusMap[taskImportanceStatus]}" />
+            </p>
+            <div class="task__info-buttons">
+                <button onclick="this.parentElement.parentElement.parentElement.parentElement.remove();" class="operation-button">Delete</button>
+            </div>
+        </div>
     </div>
     `
     return task

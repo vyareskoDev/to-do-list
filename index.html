@@ -33,7 +33,7 @@
             </div>
         </div>
     </div>
-    <div class="popup-window hiden">
+    <div id="create-new-article-popup" class="popup-window hiden">
         <div class="popup__header">
             <div class="popup__right-column">
                 <div class="popup__header-close-popup-button" id="close-popup-button">X</div>
@@ -46,6 +46,34 @@
             <form method="get" onsubmit="return false;" class="popup__create-new-task-form" id="create-new-task-form">
                 <label>Enter task title here: </label>
                 <input type="text" onfocus="this.value = ''" id="task-title-form" class="input-form">
+                <div class="popup__form-radio-buttons">
+                    <label>Very Important<input class="radio-btn" value="veryImportant" type="radio" name="importance"
+                            id="very-important"></label>
+                    <label>Important<input class="radio-btn" type="radio" value="important" name="importance"
+                            id="important"></label>
+                    <label>Not important<input class="radio-btn" value="notImportant" checked type="radio"
+                            name="importance" id="not-important"></label>
+                </div>
+                <div class="popup__form-buttons">
+                    <button type="reset" class="operation-button">Reset</button>
+                    <button class="operation-button" type="submit">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="edit-task-popup" class="popup-window hiden">
+        <div class="popup__header">
+            <div class="popup__right-column">
+                <div class="popup__header-close-popup-button" id="close-edit-popup-button">X</div>
+            </div>
+            <div class="popup__header-info">
+                <h1>Edit task</h1>
+            </div>
+        </div>
+        <div class="popup__body">
+            <form method="get" onsubmit="return false;" class="popup__create-new-task-form" id="edit-task-form">
+                <label>Enter task title here: </label>
+                <input type="text" onfocus="this.value = ''" id="edit-task-title-form" class="input-form">
                 <div class="popup__form-radio-buttons">
                     <label>Very Important<input class="radio-btn" value="veryImportant" type="radio" name="importance"
                             id="very-important"></label>
